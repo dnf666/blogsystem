@@ -1,0 +1,74 @@
+
+<html>
+<head>
+	<meta charset=UTF-8" />
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<script language="javaScript">
+        function check()
+        {
+            var username = document.form1.userName.value;
+            var password = document.form1.password.value;
+            var password2 = document.form1.password2.value;
+            if (username==""|| password==""||password2=="")
+            {
+                alert("任意信息不能为空，请重新填写！");
+                return false;
+            }
+            else if(username.length>20){
+                alert("用户名不能超过20个字符，请重新输入！");
+                return false;
+            }
+            else if(password.length<6){
+                alert("密码不能小于6个字符，请重新输入！");
+                return false;
+            }
+
+            else if (password!=password2)
+            {
+                alert("2次密码输入不一致！");
+                return false;
+            }
+            else{
+                return true;
+            }
+
+        }
+	</script>
+</head>
+<body>
+	<div class="main">
+		<div class="header" >
+			<h1>注册</h1>
+		</div>
+		<form id=form1 name="form1" method = "post" action = "/judge.do"  onsubmit="return check()">
+				<ul class="left-form">
+					<h2>注册：</h2>
+					<li>
+						<input type="text" name="userName" placeholder="Username" required/>
+						<div class="clear"> </div>
+					</li>
+					<li>
+						<input type="password" name="password" placeholder="password" required/>
+						<div class="clear"> </div>
+					</li> 
+					<li>
+						<input type="password" name="password2" placeholder="passwordAggin" required/>
+						<div class="clear"> </div>
+					</li>
+					<li>
+						<input type="radio" name="sex" value="男">男<input type="radio" name="sex" value="女">女
+						<div class="clear"> </div>
+					</li>
+					<input type="submit"  value="注册">
+						<div class="clear"> </div>
+				</ul>
+			</form>
+			
+		</div>
+
+
+	
+</body>
+</html>
